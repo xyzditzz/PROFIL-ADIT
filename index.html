@@ -15,53 +15,52 @@
             transition: all 0.3s ease;
         }
 
-        /* PERBAIKAN: Kode CSS untuk foto profil */
+        /* --- Perbaikan CSS untuk Foto Profil dan Header --- */
+
+        /* Style untuk Foto Profil */
         .profile-img {
-            width: 150px;
-            height: 150px;
+            width: 120px; /* Ukuran sedang yang proporsional */
+            height: 120px;
             object-fit: cover;
             border-radius: 50%;
             border: 3px solid #4CAF50;
-            /* PROPERTI PENTING UNTUK POSISI */
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            z-index: 100; /* Memastikan gambar berada di atas elemen lain */
-        }
-        
-        /* Kamu juga memiliki style untuk gambar di dalam .profile-card, ini tidak akan kita pakai lagi */
-        .profile-card img {
-            display: none; /* Sembunyikan gambar lama jika ada */
-        }
-        
-        /* Style lainnya tetap sama... */
-        .profile-card {
-            max-width: 800px;
-            margin: auto;
-            background: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-            padding: 25px;
-            color: #222;
+            margin-right: 25px; /* Memberi jarak ke kanan agar tidak menempel ke teks */
         }
 
-        h1, h2 {
-            color: #2e7d32;
-            margin-bottom: 10px;
-        }
-        
-        /* Header dan elemen lain di bawahnya */
+        /* Style untuk Header dengan Flexbox */
         header {
             background: linear-gradient(to right, #2e7d32, #81c784);
             color: white;
-            padding: 25px 15px;
-            text-align: center;
+            padding: 25px;
             position: sticky;
             top: 0;
             z-index: 10;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             margin-bottom: 30px;
+            
+            /* Menggunakan Flexbox untuk penataan yang rapi */
+            display: flex;
+            align-items: center; /* Menyelaraskan item di tengah secara vertikal */
         }
+
+        /* Style untuk konten teks di dalam header */
+        .header-content {
+            flex-grow: 1; /* Konten ini akan mengambil sisa ruang yang tersedia */
+        }
+
+        /* Style untuk judul di dalam header */
+        header h1 {
+            margin: 0; /* Menghilangkan margin default agar penataan lebih rapi */
+            font-size: 2em;
+        }
+
+        /* Style untuk navigasi di dalam header */
+        header nav {
+            margin-top: 10px; /* Memberi sedikit jarak antara judul dan navigasi */
+        }
+
+        /* --- Akhir dari Perbaikan --- */
+
         nav a {
             color: white;
             margin: 0 12px;
@@ -74,6 +73,7 @@
         nav a:hover {
             background: rgba(255,255,255,0.4);
         }
+        
         main {
             max-width: 1000px;
             margin: auto;
@@ -84,6 +84,10 @@
         }
         section {
             margin-bottom: 30px;
+        }
+        h2 {
+            color: #2e7d32;
+            margin-bottom: 10px;
         }
         ul, ol {
             padding-left: 20px;
@@ -150,19 +154,19 @@
 </head>
 <body>
 
-    <img src="adit.jpeg" alt="Foto Aditya" class="profile-img">
-
     <header>
-        <h1 id="title">Profil Pribadi: Aditya Restu D.</h1>
-        <nav id="nav">
-            <a href="#biodata" data-key="nav_biodata">Biodata</a>
-            <a href="#visi" data-key="nav_visi">Visi</a>
-            <a href="#misi" data-key="nav_misi">Misi</a>
-            <a href="#moto" data-key="nav_moto">Moto</a>
-            <a href="#statistik" data-key="nav_statistik">Statistik</a>
-        </nav>
+        <img src="adit.jpeg" alt="Foto Aditya" class="profile-img">
+        <div class="header-content">
+            <h1 id="title">Profil Pribadi: Aditya Restu D.</h1>
+            <nav id="nav">
+                <a href="#biodata" data-key="nav_biodata">Biodata</a>
+                <a href="#visi" data-key="nav_visi">Visi</a>
+                <a href="#misi" data-key="nav_misi">Misi</a>
+                <a href="#moto" data-key="nav_moto">Moto</a>
+                <a href="#statistik" data-key="nav_statistik">Statistik</a>
+            </nav>
+        </div>
     </header>
-
     <div class="language-buttons">
         <button data-lang="id">Bahasa Indonesia</button>
         <button data-lang="jv">Bahasa Jawa</button>
@@ -439,7 +443,7 @@
                 analysis_1: "استنادًا إلى بيانات النشاط الأسبوعي، لدى إدوين عادات متوازنة بين الأنشطة البدنية والترفيه والتعلم. يمارس الرياضة 3 مرات أسبوعيًا، ويلعب الألعاب تقريبًا كل يوم، ويدرس 5 مرات في الأسبوع.",
                 analysis_2: "من مخطط دائري، يبدو أن هواياته الرئيسية مقسمة بين فوتسال (40٪)، اللعب (35٪)، والجري (25٪). هذا يظهر اهتمامًا متساوى بالنشاط البدني والترفيه الرقمي.",
                 analysis_3: "منحنى ساعات الدراسة يظهر الاستمرارية خلال أيام العمل (الاثنين–الجمعة)، مع انخفاض طفيف في عطلات نهاية الأسبوع. هذا يدل على إدارة وقت جيدة.",
-                analysis_4: "<strong>الاستنتاج:</strong> إدوين طالب نشيط، مبدع، وله اهتمامات قوية في مجال التكنولوجيا والرياضة. أنماط نشاطه تظهر أنه قادر على التوازن بين التعلم والترفيan والترفيه والنشاط البدني بشكل جيد جدًا. إمكانيات كبيرة في عالم التكنولوجيا والانضباط في الدراسة تجعله مبرمجًا واعدًا."
+                analysis_4: "<strong>الاستنتاج:</strong> إدوين طالب نشيط، مبدع، وله اهتمامات قوية في مجال التكنولوجيا والرياضة. أنماط نشاطه تظهر أنه قادر على التوازن بين التعلم والترفيه والنشاط البدني بشكل جيد جدًا. إمكانيات كبيرة في عالم التكنولوجيا والانضباط في الدراسة تجعله مبرمجًا واعدًا."
             }
         };
 
@@ -646,6 +650,5 @@
             setLanguage('id');
         });
     </script>
-
 </body>
 </html>
