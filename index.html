@@ -1,646 +1,651 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Profil aditya restu</title>
-  <style> <img src="adit.jpeg" alt="Foto Aditya" </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Profil Aditya Restu</title>
+    <style>
+        /* Style umum */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #003366;
+            color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
 
+        /* PERBAIKAN: Kode CSS untuk foto profil */
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #4CAF50;
+            /* PROPERTI PENTING UNTUK POSISI */
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 100; /* Memastikan gambar berada di atas elemen lain */
+        }
+        
+        /* Kamu juga memiliki style untuk gambar di dalam .profile-card, ini tidak akan kita pakai lagi */
+        .profile-card img {
+            display: none; /* Sembunyikan gambar lama jika ada */
+        }
+        
+        /* Style lainnya tetap sama... */
+        .profile-card {
+            max-width: 800px;
+            margin: auto;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            padding: 25px;
+            color: #222;
+        }
 
-    /* Style umum */
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #003366;
-      color: #f0f0f0;
-      margin: 0;
-      padding: 20px;
-      transition: all 0.3s ease;
-    }
-    .profile-card {
-      max-width: 800px;
-      margin: auto;
-      background: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      padding: 25px;
-      color: #222;
-    }
-    .profile-card img {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 3px solid #4CAF50;
-      display: block;
-      margin: 0 auto 10px;
-    }
-    h1, h2 {
-      color: #2e7d32;
-      margin-bottom: 10px;
-    }
-    header {
-      background: linear-gradient(to right, #2e7d32, #81c784);
-      color: white;
-      padding: 25px 15px;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      margin-bottom: 30px;
-    }
-    nav a {
-      color: white;
-      margin: 0 12px;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 6px 12px;
-      background: rgba(255,255,255,0.2);
-      border-radius: 5px;
-    }
-    nav a:hover {
-      background: rgba(255,255,255,0.4);
-    }
-    main {
-      max-width: 1000px;
-      margin: auto;
-      padding: 0 20px 40px;
-      background: white;
-      border-radius: 10px;
-      color: #222;
-    }
-    section {
-      margin-bottom: 30px;
-    }
-    ul, ol {
-      padding-left: 20px;
-      margin-top: 10px;
-    }
-    blockquote {
-      font-style: italic;
-      background: #e8f5e9;
-      border-left: 4px solid #66bb6a;
-      padding: 10px 15px;
-      margin: 15px 0;
-      border-radius: 6px;
-      color: #388e3c;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 10px;
-      color: #222;
-    }
-    th, td {
-      border: 1px solid #ccc;
-      padding: 12px;
-      text-align: left;
-    }
-    th {
-      background: #e8f5e9;
-      color: #2e7d32;
-    }
-    canvas {
-      max-width: 100%;
-      margin: 30px auto;
-      display: block;
-    }
-    .language-buttons {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .language-buttons button {
-      margin: 0 8px;
-      padding: 8px 16px;
-      border: none;
-      background-color: #4CAF50;
-      color: white;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
-      font-size: 1em;
-    }
-    .language-buttons button:hover {
-      background-color: #388E3C;
-    }
-    .arabic {
-      direction: rtl;
-      font-family: "Amiri", serif;
-      font-size: 1.3em;
-      color: #00695c;
-      background: #e0f2f1;
-      padding: 10px;
-      border-radius: 6px;
-      margin-top: 10px;
-    }
-  </style>
+        h1, h2 {
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+        
+        /* Header dan elemen lain di bawahnya */
+        header {
+            background: linear-gradient(to right, #2e7d32, #81c784);
+            color: white;
+            padding: 25px 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        nav a {
+            color: white;
+            margin: 0 12px;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 6px 12px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 5px;
+        }
+        nav a:hover {
+            background: rgba(255,255,255,0.4);
+        }
+        main {
+            max-width: 1000px;
+            margin: auto;
+            padding: 0 20px 40px;
+            background: white;
+            border-radius: 10px;
+            color: #222;
+        }
+        section {
+            margin-bottom: 30px;
+        }
+        ul, ol {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+        blockquote {
+            font-style: italic;
+            background: #e8f5e9;
+            border-left: 4px solid #66bb6a;
+            padding: 10px 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+            color: #388e3c;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            color: #222;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+        canvas {
+            max-width: 100%;
+            margin: 30px auto;
+            display: block;
+        }
+        .language-buttons {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .language-buttons button {
+            margin: 0 8px;
+            padding: 8px 16px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1em;
+        }
+        .language-buttons button:hover {
+            background-color: #388E3C;
+        }
+        .arabic {
+            direction: rtl;
+            font-family: "Amiri", serif;
+            font-size: 1.3em;
+            color: #00695c;
+            background: #e0f2f1;
+            padding: 10px;
+            border-radius: 6px;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <h1 id="title">Profil Pribadi: Aditya Restu D.</h1>
-    <nav id="nav">
-      <a href="#biodata" data-key="nav_biodata">Biodata</a>
-      <a href="#visi" data-key="nav_visi">Visi</a>
-      <a href="#misi" data-key="nav_misi">Misi</a>
-      <a href="#moto" data-key="nav_moto">Moto</a>
-      <a href="#statistik" data-key="nav_statistik">Statistik</a>
-    </nav>
-  </header>
+    <img src="adit.jpeg" alt="Foto Aditya" class="profile-img">
 
-  <div class="language-buttons">
-    <button data-lang="id">Bahasa Indonesia</button>
-    <button data-lang="jv">Bahasa Jawa</button>
-    <button data-lang="en">English</button>
-    <button data-lang="ar">العربية</button>
-  </div>
+    <header>
+        <h1 id="title">Profil Pribadi: Aditya Restu D.</h1>
+        <nav id="nav">
+            <a href="#biodata" data-key="nav_biodata">Biodata</a>
+            <a href="#visi" data-key="nav_visi">Visi</a>
+            <a href="#misi" data-key="nav_misi">Misi</a>
+            <a href="#moto" data-key="nav_moto">Moto</a>
+            <a href="#statistik" data-key="nav_statistik">Statistik</a>
+        </nav>
+    </header>
 
-  <main>
-    <!-- Biodata -->
-    <section id="biodata">
-      <h2 data-key="biodata_title">Biodata Lengkap</h2>
-      <ul>
-        <li><strong data-key="label_name">Nama:</strong> <span id="name">Aditya Restu D.</span></li>
-        <li><strong data-key="label_birthday">Tanggal Lahir:</strong> <span id="birthday">06 february 2008</span></li>
-        <li><strong data-key="label_address">Alamat:</strong> <span id="address">jalan supriyadi rt 03 rw 07, Kec. Tirto, Kab. Pekalongan, Provinsi Jawa Tengah</span></li>
-        <li><strong data-key="label_education">Pendidikan:</strong>
-          <ul id="education-list">
-            <li>SDN PACAR</li>
-            <li>SMP 01 TIRTO</li>
-            <li>SMK Ma’arif NU Tirto</li>
-          </ul>
-        </li>
-        <li><strong data-key="label_contact">Kontak:</strong> <span id="contact">0895-2705-7087</span></li>
-      </ul>
-    </section>
+    <div class="language-buttons">
+        <button data-lang="id">Bahasa Indonesia</button>
+        <button data-lang="jv">Bahasa Jawa</button>
+        <button data-lang="en">English</button>
+        <button data-lang="ar">العربية</button>
+    </div>
 
-    <!-- Visi -->
-    <section id="visi">
-      <h2 data-key="visi_title">Visi</h2>
-      <blockquote id="visi_text">
-        "Dadi pribadi kang migunani tumrap bangsa lan nagara njaga kebudayaan jawa,lan nggayu masa depankang luwih cerah kanthi adhedhasa budi pekerti luhur."
-      </blockquote>
-    </section>
+    <main>
+        <section id="biodata">
+            <h2 data-key="biodata_title">Biodata Lengkap</h2>
+            <ul>
+                <li><strong data-key="label_name">Nama:</strong> <span id="name">Aditya Restu D.</span></li>
+                <li><strong data-key="label_birthday">Tanggal Lahir:</strong> <span id="birthday">06 february 2008</span></li>
+                <li><strong data-key="label_address">Alamat:</strong> <span id="address">jalan supriyadi rt 03 rw 07, Kec. Tirto, Kab. Pekalongan, Provinsi Jawa Tengah</span></li>
+                <li><strong data-key="label_education">Pendidikan:</strong>
+                    <ul id="education-list">
+                        <li>SDN PACAR</li>
+                        <li>SMP 01 TIRTO</li>
+                        <li>SMK Ma’arif NU Tirto</li>
+                    </ul>
+                </li>
+                <li><strong data-key="label_contact">Kontak:</strong> <span id="contact">0895-2705-7087</span></li>
+            </ul>
+        </section>
 
-    <!-- Misi -->
-    <section id="misi">
-      <h2 data-key="misi_title">Misi</h2>
-      <div id="misi_arabic" class="arabic">
-        تَعَلُّمُ الْعِلْمِ وَتَطْبِيقُهُ فِي الْحَيَاةِ، وَنَشْرُ الْمَحَبَّةِ وَالسَّلَامِ بَيْنَ النَّاس.
-      </div>
-      <p id="misi_translation" style="margin-top:10px; font-style: italic;">
-        (Menjadi pembelajar dan pengamal, menyebarkan kebaikan dan menegakkan kebenaran, semata-mata untuk meraih rida Allah.)
-      </p>
-    </section>
+        <section id="visi">
+            <h2 data-key="visi_title">Visi</h2>
+            <blockquote id="visi_text">
+                "Dadi pribadi kang migunani tumrap bangsa lan nagara njaga kebudayaan jawa,lan nggayu masa depankang luwih cerah kanthi adhedhasa budi pekerti luhur."
+            </blockquote>
+        </section>
 
-    <!-- Moto -->
-    <section id="moto">
-      <h2 data-key="moto_title">Moto</h2>
-      <blockquote id="moto_text">
-        "Seek knowledge, spread kindness, and trust in His plan."
-      </blockquote>
-    </section>
+        <section id="misi">
+            <h2 data-key="misi_title">Misi</h2>
+            <div id="misi_arabic" class="arabic">
+                تَعَلُّمُ الْعِلْمِ وَتَطْبِيقُهُ فِي الْحَيَاةِ، وَنَشْرُ الْمَحَبَّةِ وَالسَّلَامِ بَيْنَ النَّاس.
+            </div>
+            <p id="misi_translation" style="margin-top:10px; font-style: italic;">
+                (Menjadi pembelajar dan pengamal, menyebarkan kebaikan dan menegakkan kebenaran, semata-mata untuk meraih rida Allah.)
+            </p>
+        </section>
 
-    <!-- Statistik Pribadi -->
-    <section id="statistik">
-      <h2 data-key="statistik_title">Statistik Pribadi</h2>
-      <table>
-        <tr>
-          <th data-key="table_category">Kategori</th>
-          <th data-key="table_data">Data</th>
-        </tr>
-        <tr>
-          <td data-key="stat_olahraga">Frekuensi sepak bola</td>
-          <td id="freq_olahraga">setiap hari</td>
-        </tr>
-        <tr>
-          <td data-key="stat_game">Frekuensi Bermain Game</td>
-          <td id="freq_game">2 kali/minggu</td>
-        </tr>
-        <tr>
-          <td data-key="stat_belajar">Frekuensi Belajar</td>
-          <td id="freq_belajar">3 kali/minggu</td>
-        </tr>
-        <tr>
-          <td data-key="stat_hobi">Hobi Utama</td>
-          <td id="hobi">sepak bola, Game, Jogging</td>
-        </tr>
-      </table>
-    </section>
+        <section id="moto">
+            <h2 data-key="moto_title">Moto</h2>
+            <blockquote id="moto_text">
+                "Seek knowledge, spread kindness, and trust in His plan."
+            </blockquote>
+        </section>
 
-    <!-- Grafik / Charts -->
-    <section>
-      <h2 data-key="chart_bar_title">Diagram Batang: Aktivitas Mingguan</h2>
-      <canvas id="barChart"></canvas>
-    </section>
+        <section id="statistik">
+            <h2 data-key="statistik_title">Statistik Pribadi</h2>
+            <table>
+                <tr>
+                    <th data-key="table_category">Kategori</th>
+                    <th data-key="table_data">Data</th>
+                </tr>
+                <tr>
+                    <td data-key="stat_olahraga">Frekuensi sepak bola</td>
+                    <td id="freq_olahraga">setiap hari</td>
+                </tr>
+                <tr>
+                    <td data-key="stat_game">Frekuensi Bermain Game</td>
+                    <td id="freq_game">2 kali/minggu</td>
+                </tr>
+                <tr>
+                    <td data-key="stat_belajar">Frekuensi Belajar</td>
+                    <td id="freq_belajar">3 kali/minggu</td>
+                </tr>
+                <tr>
+                    <td data-key="stat_hobi">Hobi Utama</td>
+                    <td id="hobi">sepak bola, Game, Jogging</td>
+                </tr>
+            </table>
+        </section>
 
-    <section>
-      <h2 data-key="chart_pie_title">Diagram Lingkaran: Hobi</h2>
-      <canvas id="pieChart"></canvas>
-    </section>
+        <section>
+            <h2 data-key="chart_bar_title">Diagram Batang: Aktivitas Mingguan</h2>
+            <canvas id="barChart"></canvas>
+        </section>
 
-    <section>
-      <h2 data-key="chart_line_title">Diagram Kurva: Jam Belajar Harian</h2>
-      <canvas id="lineChart"></canvas>
-    </section>
+        <section>
+            <h2 data-key="chart_pie_title">Diagram Lingkaran: Hobi</h2>
+            <canvas id="pieChart"></canvas>
+        </section>
 
-    <!-- Analisis Statistik -->
-    <section>
-      <h2 data-key="analysis_title">Analisis Statistik Pribadi</h2>
-      <p id="analysis_1">
-        Berdasarkan data aktivitas mingguan, adit memiliki kebiasaan yang seimbang antara kegiatan fisik, hiburan, dan pembelajaran. Ia rutin berolahraga 3 kali dalam seminggu, bermain game hampir setiap hari, dan belajar 5 kali per minggu.
-      </p>
-      <p id="analysis_2">
-        Dari grafik lingkaran, terlihat bahwa hobi utamanya terbagi antara sepak bola (50%), bermain game (30%), dan jogging (20%). Ini menunjukkan ketertarikan adit pada aktivitas fisik dan hiburan digital secara seimbang.
-      </p>
-      <p id="analysis_3">
-        Kurva jam belajar menunjukkan konsistensi dalam belajar pada hari kerja (Senin–rabu), dan sedikit menurun pada akhir pekan. Ini menandakan manajemen waktu yang cukup baik.
-      </p>
-      
-      
-    </section>
-  </main>
+        <section>
+            <h2 data-key="chart_line_title">Diagram Kurva: Jam Belajar Harian</h2>
+            <canvas id="lineChart"></canvas>
+        </section>
 
-  <!-- Chart.js CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <section>
+            <h2 data-key="analysis_title">Analisis Statistik Pribadi</h2>
+            <p id="analysis_1">
+                Berdasarkan data aktivitas mingguan, adit memiliki kebiasaan yang seimbang antara kegiatan fisik, hiburan, dan pembelajaran. Ia rutin berolahraga 3 kali dalam seminggu, bermain game hampir setiap hari, dan belajar 5 kali per minggu.
+            </p>
+            <p id="analysis_2">
+                Dari grafik lingkaran, terlihat bahwa hobi utamanya terbagi antara sepak bola (50%), bermain game (30%), dan jogging (20%). Ini menunjukkan ketertarikan adit pada aktivitas fisik dan hiburan digital secara seimbang.
+            </p>
+            <p id="analysis_3">
+                Kurva jam belajar menunjukkan konsistensi dalam belajar pada hari kerja (Senin–rabu), dan sedikit menurun pada akhir pekan. Ini menandakan manajemen waktu yang cukup baik.
+            </p>
+        </section>
+    </main>
 
-  <script>
-    // Objek semua teks untuk setiap bahasa
-    const translations = {
-      id: {
-        title: "Profil Pribadi: Aditya Restu D.",
-        nav_biodata: "Biodata",
-        nav_visi: "Visi",
-        nav_misi: "Misi",
-        nav_moto: "Moto",
-        nav_statistik: "Statistik",
-        biodata_title: "Biodata Lengkap",
-        label_name: "Nama:",
-        label_birthday: "Tanggal Lahir:",
-        label_address: "Alamat:",
-        label_education: "Pendidikan:",
-        label_contact: "Kontak:",
-        education_list: ["SDN PACAR", "SMP 01 TIRTO", "SMK Ma’arif NU Tirto"],
-        visi_title: "Visi",
-        visi_text: `"Dadi pribadi kang migunani tumrap bangsa lan nagara njaga kebudayaan jawa,lan nggayu masa depankang luwih cerah kanthi adhedhasa budi pekerti luhur."`,
-        misi_title: "Misi",
-        misi_arabic: "تَعَلُّمُ الْعِلْمِ وَتَطْبِيقُهُ فِي الْحَيَاةِ، وَنَشْرُ الْمَحَبَّةِ وَالسَّلَامِ بَيْنَ النَّاس.",
-        misi_translation: "(Menjadi pembelajar dan pengamal, menyebarkan kebaikan dan menegakkan kebenaran, semata-mata untuk meraih rida Allah.)",
-        moto_title: "Moto",
-        moto_text: `"Seek knowledge, spread kindness, and trust in His plan."`,
-        statistik_title: "Statistik Pribadi",
-        table_category: "Kategori",
-        table_data: "Data",
-        stat_olahraga: "Frekuensi Olahraga",
-        stat_game: "Frekuensi Bermain Game",
-        stat_belajar: "Frekuensi Belajar",
-        stat_hobi: "Hobi Utama",
-        freq_olahraga: "3 kali/minggu",
-        freq_game: "6 kali/minggu",
-        freq_belajar: "5 kali/minggu",
-        hobi: "Futsal, Game, Jogging",
-        chart_bar_title: "Diagram Batang: Aktivitas Mingguan",
-        chart_pie_title: "Diagram Lingkaran: Hobi",
-        chart_line_title: "Diagram Kurva: Jam Belajar Harian",
-        // label grafik hari
-        chart_labels_days: ["Senin","Selasa","Rabu","Kamis","Jumat","Sabtu","Minggu"],
-        analysis_title: "Analisis Statistik Pribadi",
-        analysis_1: "Berdasarkan data aktivitas mingguan, adit memiliki kebiasaan yang seimbang antara kegiatan fisik, hiburan, dan pembelajaran. Ia rutin berolahraga 3 kali dalam seminggu, bermain game hampir setiap hari, dan belajar 5 kali per minggu.",
-        analysis_2: "Dari grafik lingkaran, terlihat bahwa hobi utamanya terbagi antara futsal (40%), bermain game (35%), dan jogging (25%). Ini menunjukkan ketertarikan adit pada aktivitas fisik dan hiburan digital secara seimbang.",
-        analysis_3: "Kurva jam belajar menunjukkan konsistensi dalam belajar pada hari kerja (Senin–Rabu), dan sedikit menurun pada akhir pekan. Ini menandakan manajemen waktu yang cukup baik.",
-        analysis_4: "<strong>Kesimpulan:</strong> adit merupakan siswa yang aktif, kreatif, dan memiliki minat kuat di bidang teknologi dan olahraga. Pola aktivitasnya menunjukkan bahwa dia mampu menyeimbangkan antara belajar, hiburan, dan kegiatan fisik dengan cukup baik. Potensi besar dalam dunia teknologi dan kedisiplinan belajar menjadikannya calon programmer yang menjanjikan."
-      },
-      jv: {
-        title: "Profil Pribadi: Aditya Restu D.",
-        nav_biodata: "Biodata",
-        nav_visi: "Visi",
-        nav_misi: "Misi",
-        nav_moto: "Moto",
-        nav_statistik: "Statistik",
-        biodata_title: "Biodata Lengkap",
-        label_name: "Nama:",
-        label_birthday: "Tanggal Lahir:",
-        label_address: "Alamat:",
-        label_education: "Pendidikan:",
-        label_contact: "Kontak:",
-        education_list: ["SDN PACAR", "SMP 01 TIRTO", "SMK Ma’arif NU Tirto"],
-        visi_title: "Visi",
-        visi_text: `"Dadi pribadi kang migunani tumrap bangsa lan nagara njaga kabudayan Jawa, lan nggayuh masa depan kang luwih padhang kanthi adhedhasar budi pekerti luhur."`,
-        misi_title: "Misi",
-        misi_arabic: "تَعَلُّمُ الْعِلْمِ وَتَطْبِيقُهُ فِي الْحَيَاةِ، وَنَشْرُ الْمَحَبَّةِ وَالسَّلَامِ بَيْنَ النَّاس.",
-        misi_translation: "(Dadi pamelajar lan pelaksana, nyebarake kabecikan lan netepake kabeneran, mung kanggo nggayuh ridho Allah.)",
-        moto_title: "Moto",
-        moto_text: `"Seek knowledge, spread kindness, and trust in His plan."`,
-        statistik_title: "Statistik Pribadi",
-        table_category: "Kategori",
-        table_data: "Data",
-        stat_olahraga: "Frekuensi Olahraga",
-        stat_game: "Frekuensi Main Game",
-        stat_belajar: "Frekuensi Sinau",
-        stat_hobi: "Hobi Utama",
-        freq_olahraga: "3 kaping/minggu",
-        freq_game: "6 kaping/minggu",
-        freq_belajar: "5 kaping/minggu",
-        hobi: "Futsal, Game, Jogging",
-        chart_bar_title: "Diagram Batang: Aktivitas Mingguan",
-        chart_pie_title: "Diagram Lingkaran: Hobi",
-        chart_line_title: "Diagram Kurva: Jam Belajar Saben Dina",
-        chart_labels_days: ["Senen","Seloso","Rebo","Kemis","Jemuwah","Setu","Minggu"],
-        analysis_title: "Analisis Statistik Pribadi",
-        analysis_1: "Adhedhasar data aktivitas mingguan, Edwin nduweni kabiasaan sing imbang antarane kegiatan fisik, hiburan, lan pembelajaran. Panjenengan rutin olahraga 3 kaping saben minggu, main game meh saben dina, lan sinau 5 kaping saben minggu.",
-        analysis_2: "Saka grafik lingkaran, katon yèn hobiné utamane kabagi antarané futsal (40%), main game (35%), lan jogging (25%). Iki nuduhaké ketertarikan marang aktivitas fisik lan hiburan digital kanthi seimbang.",
-        analysis_3: "Kurva jam sinau nuduhaké konsistensi wektu sinau ing dina kerja (Senin–Jumat), lan rada mudhun nalika akhir minggu. Iki nuduhaké manajemen wektu sing cukup apik.",
-        analysis_4: "<strong>Kesimpulan:</strong> Edwin punika siswa sing aktif, kreatif, lan kagungan minat kuwat ing babagan teknologi lan olahraga. Pola aktivitasé nuduhaké yèn piyambakipun saged nyelarasaké antarane sinau, hiburan, lan kegiatan fisik kanthi apik. Potensi ageng wonten ing donya teknologi lan disiplin sinau njalari piyambakipun dados calon programmer ingkang menjanjikan."
-      },
-      en: {
-        title: "Personal Profile: Aditya Restu D.",
-        nav_biodata: "Biodata",
-        nav_visi: "Vision",
-        nav_misi: "Mission",
-        nav_moto: "Motto",
-        nav_statistik: "Statistics",
-        biodata_title: "Complete Biodata",
-        label_name: "Name:",
-        label_birthday: "Date of Birth:",
-        label_address: "Address:",
-        label_education: "Education:",
-        label_contact: "Contact:",
-        education_list: ["SDN PACAR", "SMP 01 TIRTO", "SMK Ma’arif NU Tirto"],
-        visi_title: "Vision",
-        visi_text: `"To be a useful individual for the nation and country, to preserve Javanese culture, and strive for a brighter future based on high moral character."`,
-        misi_title: "Mission",
-        misi_arabic: "تَعَلُّمُ الْعِلْمِ وَتَطْبِيقُهُ فِي الْحَيَاةِ، وَنَشْرُ الْمَحَبَّةِ وَالسَّلَامِ بَيْنَ النَّاس.",
-        misi_translation: "(Be a learner and doer, spread goodness and uphold truth, solely to earn the pleasure of Allah.)",
-        moto_title: "Motto",
-        moto_text: `"Seek knowledge, spread kindness, and trust in His plan."`,
-        statistik_title: "Personal Statistics",
-        table_category: "Category",
-        table_data: "Data",
-        stat_olahraga: "Frequency of Exercise",
-        stat_game: "Frequency of Playing Games",
-        stat_belajar: "Frequency of Study",
-        stat_hobi: "Main Hobbies",
-        freq_olahraga: "3 times/week",
-        freq_game: "6 times/week",
-        freq_belajar: "5 times/week",
-        hobi: "Futsal, Gaming, Jogging",
-        chart_bar_title: "Bar Chart: Weekly Activities",
-        chart_pie_title: "Pie Chart: Hobbies",
-        chart_line_title: "Line Chart: Daily Study Hours",
-        chart_labels_days: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-        analysis_title: "Personal Statistical Analysis",
-        analysis_1: "Based on the weekly activity data, Edwin has balanced habits among physical activity, entertainment, and learning. He regularly exercises 3 times a week, plays games almost every day, and studies 5 times per week.",
-        analysis_2: "From the pie chart, it appears his main hobbies are divided among futsal (40%), gaming (35%), and jogging (25%). This shows an interest in both physical activity and digital entertainment equally.",
-        analysis_3: "The study hours curve shows consistency during workdays (Monday–Friday), with a slight decrease on weekends. This indicates good time management.",
-        analysis_4: "<strong>Conclusion:</strong> Edwin is an active, creative student with strong interests in technology and sports. His activity patterns show he can balance learning, entertainment, and physical activity quite well. Great potential in technology world and disciplined learning make him a promising prospective programmer."
-      },
-      ar: {
-        title: "الملف الشخصي: أديتيا ريستو د.",
-        nav_biodata: "البيانات",
-        nav_visi: "الرؤية",
-        nav_misi: "المهمة",
-        nav_moto: "الشعار",
-        nav_statistik: "الإحصائيات",
-        biodata_title: "سيرة كاملة",
-        label_name: "الاسم:",
-        label_birthday: "تاريخ الميلاد:",
-        label_address: "العنوان:",
-        label_education: "التعليم:",
-        label_contact: "الاتصال:",
-        education_list: ["SDN PACAR", "SMP 01 TIRTO", "SMK Ma’arif NU Tirto"],
-        visi_title: "الرؤية",
-        visi_text: `"أن تكون شخصاً مفيداً للأمة والوطن، الحفاظ على الثقافة الجاوية، والسعي نحو مستقبل أكثر إشراقاً بناءً على الأخلاق العالية."`,
-        misi_title: "المهمة",
-        misi_arabic: "تَعَلُّمُ الْعِلْمِ وَتَطْبِيقُهُ فِي الْحَيَاةِ، وَنَشْرُ الْمَحَبَّةِ وَالسَّلَامِ بَيْنَ النَّاس.",
-        misi_translation: "(كن متعلماً وممارسًا، وانشر الخير وادعُ الحق، فقط لكسب رضا الله.)",
-        moto_title: "الشعار",
-        moto_text: `"اطلب العلم، انشر اللطف، وثق بخطته."`,
-        statistik_title: "الإحصائيات الشخصية",
-        table_category: "الفئة",
-        table_data: "البيانات",
-        stat_olahraga: "تكرار التمارين",
-        stat_game: "تكرار لعب الألعاب",
-        stat_belajar: "تكرار الدراسة",
-        stat_hobi: "الهوايات الرئيسية",
-        freq_olahraga: "3 مرات/الأسبوع",
-        freq_game: "6 مرات/الأسبوع",
-        freq_belajar: "5 مرات/الأسبوع",
-        hobi: "فوتسال، اللعب، الركض",
-        chart_bar_title: "مخطط أعمدة: الأنشطة الأسبوعية",
-        chart_pie_title: "مخطط دائري: الهوايات",
-        chart_line_title: "مخطط خطي: ساعات الدراسة اليومية",
-        chart_labels_days: ["الإثنين","الثلاثاء","الأربعاء","الخميس","الجمعة","السبت","الأحد"],
-        analysis_title: "التحليل الشخصي للإحصائيات",
-        analysis_1: "استنادًا إلى بيانات النشاط الأسبوعي، لدى إدوين عادات متوازنة بين الأنشطة البدنية والترفيه والتعلم. يمارس الرياضة 3 مرات أسبوعيًا، ويلعب الألعاب تقريبًا كل يوم، ويدرس 5 مرات في الأسبوع.",
-        analysis_2: "من مخطط دائري، يبدو أن هواياته الرئيسية مقسمة بين فوتسال (40٪)، اللعب (35٪)، والجري (25٪). هذا يظهر اهتمامًا متساوى بالنشاط البدني والترفيه الرقمي.",
-        analysis_3: "منحنى ساعات الدراسة يظهر الاستمرارية خلال أيام العمل (الاثنين–الجمعة)، مع انخفاض طفيف في عطلات نهاية الأسبوع. هذا يدل على إدارة وقت جيدة.",
-        analysis_4: "<strong>الاستنتاج:</strong> إدوين طالب نشيط، مبدع، وله اهتمامات قوية في مجال التكنولوجيا والرياضة. أنماط نشاطه تظهر أنه قادر على التوازن بين التعلم والترفيan والترفيه والنشاط البدني بشكل جيد جدًا. إمكانيات كبيرة في عالم التكنولوجيا والانضباط في الدراسة تجعله مبرمجًا واعدًا."
-      }
-    };
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    let barChart, pieChart, lineChart;
-
-    function createCharts(lang) {
-      const t = translations[lang];
-      // Bar Chart
-      const barCtx = document.getElementById('barChart').getContext('2d');
-      if (barChart) barChart.destroy();
-      barChart = new Chart(barCtx, {
-        type: 'bar',
-        data: {
-          labels: t.chart_labels_days,
-          datasets: [{
-            label: t.table_category, // atau label lain jika perlu
-            data: [ // data frekuensi
-              Number(t.freq_olahraga.replace(/[^\d]/g, '')) || 3,
-              Number(t.freq_game.replace(/[^\d]/g, '')) || 6,
-              Number(t.freq_belajar.replace(/[^\d]/g, '')) || 5
-            ],
-            backgroundColor: ['#4CAF50', '#FF9800', '#2196F3'],
-            borderRadius: 5,
-          }]
-        },
-        options: {
-          scales: {
-            y: {
-              beginAtZero: true,
-              stepSize: 1,
-              max: 7,
-              title: {
-                display: true,
-                text: t.table_data
-              }
+    <script>
+        // Objek semua teks untuk setiap bahasa
+        const translations = {
+            id: {
+                title: "Profil Pribadi: Aditya Restu D.",
+                nav_biodata: "Biodata",
+                nav_visi: "Visi",
+                nav_misi: "Misi",
+                nav_moto: "Moto",
+                nav_statistik: "Statistik",
+                biodata_title: "Biodata Lengkap",
+                label_name: "Nama:",
+                label_birthday: "Tanggal Lahir:",
+                label_address: "Alamat:",
+                label_education: "Pendidikan:",
+                label_contact: "Kontak:",
+                education_list: ["SDN PACAR", "SMP 01 TIRTO", "SMK Ma’arif NU Tirto"],
+                visi_title: "Visi",
+                visi_text: `"Dadi pribadi kang migunani tumrap bangsa lan nagara njaga kebudayaan jawa,lan nggayu masa depankang luwih cerah kanthi adhedhasa budi pekerti luhur."`,
+                misi_title: "Misi",
+                misi_arabic: "تَعَلُّمُ الْعِلْمِ وَتَطْبِيقُهُ فِي الْحَيَاةِ، وَنَشْرُ الْمَحَبَّةِ وَالسَّلَامِ بَيْنَ النَّاس.",
+                misi_translation: "(Menjadi pembelajar dan pengamal, menyebarkan kebaikan dan menegakkan kebenaran, semata-mata untuk meraih rida Allah.)",
+                moto_title: "Moto",
+                moto_text: `"Seek knowledge, spread kindness, and trust in His plan."`,
+                statistik_title: "Statistik Pribadi",
+                table_category: "Kategori",
+                table_data: "Data",
+                stat_olahraga: "Frekuensi Olahraga",
+                stat_game: "Frekuensi Bermain Game",
+                stat_belajar: "Frekuensi Belajar",
+                stat_hobi: "Hobi Utama",
+                freq_olahraga: "3 kali/minggu",
+                freq_game: "6 kali/minggu",
+                freq_belajar: "5 kali/minggu",
+                hobi: "Futsal, Game, Jogging",
+                chart_bar_title: "Diagram Batang: Aktivitas Mingguan",
+                chart_pie_title: "Diagram Lingkaran: Hobi",
+                chart_line_title: "Diagram Kurva: Jam Belajar Harian",
+                // label grafik hari
+                chart_labels_days: ["Senin","Selasa","Rabu","Kamis","Jumat","Sabtu","Minggu"],
+                analysis_title: "Analisis Statistik Pribadi",
+                analysis_1: "Berdasarkan data aktivitas mingguan, adit memiliki kebiasaan yang seimbang antara kegiatan fisik, hiburan, dan pembelajaran. Ia rutin berolahraga 3 kali dalam seminggu, bermain game hampir setiap hari, dan belajar 5 kali per minggu.",
+                analysis_2: "Dari grafik lingkaran, terlihat bahwa hobi utamanya terbagi antara futsal (40%), bermain game (35%), dan jogging (25%). Ini menunjukkan ketertarikan adit pada aktivitas fisik dan hiburan digital secara seimbang.",
+                analysis_3: "Kurva jam belajar menunjukkan konsistensi dalam belajar pada hari kerja (Senin–Rabu), dan sedikit menurun pada akhir pekan. Ini menandakan manajemen waktu yang cukup baik.",
+                analysis_4: "<strong>Kesimpulan:</strong> adit merupakan siswa yang aktif, kreatif, dan memiliki minat kuat di bidang teknologi dan olahraga. Pola aktivitasnya menunjukkan bahwa dia mampu menyeimbangkan antara belajar, hiburan, dan kegiatan fisik dengan cukup baik. Potensi besar dalam dunia teknologi dan kedisiplinan belajar menjadikannya calon programmer yang menjanjikan."
             },
-            x: {
-              title: {
-                display: true,
-                text: t.table_category
-              }
-            }
-          },
-          plugins: {
-            legend: { display: false },
-            tooltip: { enabled: true }
-          }
-        }
-      });
-
-      // Pie Chart
-      const pieCtx = document.getElementById('pieChart').getContext('2d');
-      if (pieChart) pieChart.destroy();
-      pieChart = new Chart(pieCtx, {
-        type: 'pie',
-        data: {
-          labels: ["Futsal","Game","Jogging"],  // bisa juga taruh di translations kalau mau
-          datasets: [{
-            data: [40, 35, 25],
-            backgroundColor: ['#4CAF50', '#FF9800', '#2196F3'],
-            hoverOffset: 30
-          }]
-        },
-        options: {
-          plugins: {
-            legend: {
-              position: 'bottom',
-              labels: {
-                // warna teks legend agar kontras
-                color: lang === 'ar' ? '#000' : '#000'
-              }
-            }
-          }
-        }
-      });
-
-      // Line Chart
-      const lineCtx = document.getElementById('lineChart').getContext('2d');
-      if (lineChart) lineChart.destroy();
-      lineChart = new Chart(lineCtx, {
-        type: 'line',
-        data: {
-          labels: t.chart_labels_days,
-          datasets: [{
-            label: t.chart_data_label || t.table_data, // bisa ditambah di translations jika diinginkan
-            data: [3,3,3,3,3,1,1],
-            fill: true,
-            backgroundColor: 'rgba(33, 150, 243, 0.2)',
-            borderColor: '#2196F3',
-            tension: 0.3,
-            pointBackgroundColor: '#2196F3'
-          }]
-        },
-        options: {
-          scales: {
-            y: {
-              beginAtZero: true,
-              max: 5,
-              stepSize: 1,
-              title: {
-                display: true,
-                text: t.table_data
-              }
+            jv: {
+                title: "Profil Pribadi: Aditya Restu D.",
+                nav_biodata: "Biodata",
+                nav_visi: "Visi",
+                nav_misi: "Misi",
+                nav_moto: "Moto",
+                nav_statistik: "Statistik",
+                biodata_title: "Biodata Lengkap",
+                label_name: "Nama:",
+                label_birthday: "Tanggal Lahir:",
+                label_address: "Alamat:",
+                label_education: "Pendidikan:",
+                label_contact: "Kontak:",
+                education_list: ["SDN PACAR", "SMP 01 TIRTO", "SMK Ma’arif NU Tirto"],
+                visi_title: "Visi",
+                visi_text: `"Dadi pribadi kang migunani tumrap bangsa lan nagara njaga kabudayan Jawa, lan nggayuh masa depan kang luwih padhang kanthi adhedhasar budi pekerti luhur."`,
+                misi_title: "Misi",
+                misi_arabic: "تَعَلُّمُ الْعِلْمِ وَتَطْبِيقُهُ فِي الْحَيَاةِ، وَنَشْرُ الْمَحَبَّةِ وَالسَّلَامِ بَيْنَ النَّاس.",
+                misi_translation: "(Dadi pamelajar lan pelaksana, nyebarake kabecikan lan netepake kabeneran, mung kanggo nggayuh ridho Allah.)",
+                moto_title: "Moto",
+                moto_text: `"Seek knowledge, spread kindness, and trust in His plan."`,
+                statistik_title: "Statistik Pribadi",
+                table_category: "Kategori",
+                table_data: "Data",
+                stat_olahraga: "Frekuensi Olahraga",
+                stat_game: "Frekuensi Main Game",
+                stat_belajar: "Frekuensi Sinau",
+                stat_hobi: "Hobi Utama",
+                freq_olahraga: "3 kaping/minggu",
+                freq_game: "6 kaping/minggu",
+                freq_belajar: "5 kaping/minggu",
+                hobi: "Futsal, Game, Jogging",
+                chart_bar_title: "Diagram Batang: Aktivitas Mingguan",
+                chart_pie_title: "Diagram Lingkaran: Hobi",
+                chart_line_title: "Diagram Kurva: Jam Belajar Saben Dina",
+                chart_labels_days: ["Senen","Seloso","Rebo","Kemis","Jemuwah","Setu","Minggu"],
+                analysis_title: "Analisis Statistik Pribadi",
+                analysis_1: "Adhedhasar data aktivitas mingguan, Edwin nduweni kabiasaan sing imbang antarane kegiatan fisik, hiburan, lan pembelajaran. Panjenengan rutin olahraga 3 kaping saben minggu, main game meh saben dina, lan sinau 5 kaping saben minggu.",
+                analysis_2: "Saka grafik lingkaran, katon yèn hobiné utamane kabagi antarané futsal (40%), main game (35%), lan jogging (25%). Iki nuduhaké ketertarikan marang aktivitas fisik lan hiburan digital kanthi seimbang.",
+                analysis_3: "Kurva jam sinau nuduhaké konsistensi wektu sinau ing dina kerja (Senin–Jumat), lan rada mudhun nalika akhir minggu. Iki nuduhaké manajemen wektu sing cukup apik.",
+                analysis_4: "<strong>Kesimpulan:</strong> Edwin punika siswa sing aktif, kreatif, lan kagungan minat kuwat ing babagan teknologi lan olahraga. Pola aktivitasé nuduhaké yèn piyambakipun saged nyelarasaké antarane sinau, hiburan, lan kegiatan fisik kanthi apik. Potensi ageng wonten ing donya teknologi lan disiplin sinau njalari piyambakipun dados calon programmer ingkang menjanjikan."
             },
-            x: {
-              title: {
-                display: true,
-                text: t.table_category
-              }
+            en: {
+                title: "Personal Profile: Aditya Restu D.",
+                nav_biodata: "Biodata",
+                nav_visi: "Vision",
+                nav_misi: "Mission",
+                nav_moto: "Motto",
+                nav_statistik: "Statistics",
+                biodata_title: "Complete Biodata",
+                label_name: "Name:",
+                label_birthday: "Date of Birth:",
+                label_address: "Address:",
+                label_education: "Education:",
+                label_contact: "Contact:",
+                education_list: ["SDN PACAR", "SMP 01 TIRTO", "SMK Ma’arif NU Tirto"],
+                visi_title: "Vision",
+                visi_text: `"To be a useful individual for the nation and country, to preserve Javanese culture, and strive for a brighter future based on high moral character."`,
+                misi_title: "Mission",
+                misi_arabic: "تَعَلُّمُ الْعِلْمِ وَتَطْبِيقُهُ فِي الْحَيَاةِ، وَنَشْرُ الْمَحَبَّةِ وَالسَّلَامِ بَيْنَ النَّاس.",
+                misi_translation: "(Be a learner and doer, spread goodness and uphold truth, solely to earn the pleasure of Allah.)",
+                moto_title: "Motto",
+                moto_text: `"Seek knowledge, spread kindness, and trust in His plan."`,
+                statistik_title: "Personal Statistics",
+                table_category: "Category",
+                table_data: "Data",
+                stat_olahraga: "Frequency of Exercise",
+                stat_game: "Frequency of Playing Games",
+                stat_belajar: "Frequency of Study",
+                stat_hobi: "Main Hobbies",
+                freq_olahraga: "3 times/week",
+                freq_game: "6 times/week",
+                freq_belajar: "5 times/week",
+                hobi: "Futsal, Gaming, Jogging",
+                chart_bar_title: "Bar Chart: Weekly Activities",
+                chart_pie_title: "Pie Chart: Hobbies",
+                chart_line_title: "Line Chart: Daily Study Hours",
+                chart_labels_days: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+                analysis_title: "Personal Statistical Analysis",
+                analysis_1: "Based on the weekly activity data, Edwin has balanced habits among physical activity, entertainment, and learning. He regularly exercises 3 times a week, plays games almost every day, and studies 5 times per week.",
+                analysis_2: "From the pie chart, it appears his main hobbies are divided among futsal (40%), gaming (35%), and jogging (25%). This shows an interest in both physical activity and digital entertainment equally.",
+                analysis_3: "The study hours curve shows consistency during workdays (Monday–Friday), with a slight decrease on weekends. This indicates good time management.",
+                analysis_4: "<strong>Conclusion:</strong> Edwin is an active, creative student with strong interests in technology and sports. His activity patterns show he can balance learning, entertainment, and physical activity quite well. Great potential in technology world and disciplined learning make him a promising prospective programmer."
+            },
+            ar: {
+                title: "الملف الشخصي: أديتيا ريستو د.",
+                nav_biodata: "البيانات",
+                nav_visi: "الرؤية",
+                nav_misi: "المهمة",
+                nav_moto: "الشعار",
+                nav_statistik: "الإحصائيات",
+                biodata_title: "سيرة كاملة",
+                label_name: "الاسم:",
+                label_birthday: "تاريخ الميلاد:",
+                label_address: "العنوان:",
+                label_education: "التعليم:",
+                label_contact: "الاتصال:",
+                education_list: ["SDN PACAR", "SMP 01 TIRTO", "SMK Ma’arif NU Tirto"],
+                visi_title: "الرؤية",
+                visi_text: `"أن تكون شخصاً مفيداً للأمة والوطن، الحفاظ على الثقافة الجاوية، والسعي نحو مستقبل أكثر إشراقاً بناءً على الأخلاق العالية."`,
+                misi_title: "المهمة",
+                misi_arabic: "تَعَلُّمُ الْعِلْمِ وَتَطْبِيقُهُ فِي الْحَيَاةِ، وَنَشْرُ الْمَحَبَّةِ وَالسَّلَامِ بَيْنَ النَّاس.",
+                misi_translation: "(كن متعلماً وممارسًا، وانشر الخير وادعُ الحق، فقط لكسب رضا الله.)",
+                moto_title: "الشعار",
+                moto_text: `"اطلب العلم، انشر اللطف، وثق بخطته."`,
+                statistik_title: "الإحصائيات الشخصية",
+                table_category: "الفئة",
+                table_data: "البيانات",
+                stat_olahraga: "تكرار التمارين",
+                stat_game: "تكرار لعب الألعاب",
+                stat_belajar: "تكرار الدراسة",
+                stat_hobi: "الهوايات الرئيسية",
+                freq_olahraga: "3 مرات/الأسبوع",
+                freq_game: "6 مرات/الأسبوع",
+                freq_belajar: "5 مرات/الأسبوع",
+                hobi: "فوتسال، اللعب، الركض",
+                chart_bar_title: "مخطط أعمدة: الأنشطة الأسبوعية",
+                chart_pie_title: "مخطط دائري: الهوايات",
+                chart_line_title: "مخطط خطي: ساعات الدراسة اليومية",
+                chart_labels_days: ["الإثنين","الثلاثاء","الأربعاء","الخميس","الجمعة","السبت","الأحد"],
+                analysis_title: "التحليل الشخصي للإحصائيات",
+                analysis_1: "استنادًا إلى بيانات النشاط الأسبوعي، لدى إدوين عادات متوازنة بين الأنشطة البدنية والترفيه والتعلم. يمارس الرياضة 3 مرات أسبوعيًا، ويلعب الألعاب تقريبًا كل يوم، ويدرس 5 مرات في الأسبوع.",
+                analysis_2: "من مخطط دائري، يبدو أن هواياته الرئيسية مقسمة بين فوتسال (40٪)، اللعب (35٪)، والجري (25٪). هذا يظهر اهتمامًا متساوى بالنشاط البدني والترفيه الرقمي.",
+                analysis_3: "منحنى ساعات الدراسة يظهر الاستمرارية خلال أيام العمل (الاثنين–الجمعة)، مع انخفاض طفيف في عطلات نهاية الأسبوع. هذا يدل على إدارة وقت جيدة.",
+                analysis_4: "<strong>الاستنتاج:</strong> إدوين طالب نشيط، مبدع، وله اهتمامات قوية في مجال التكنولوجيا والرياضة. أنماط نشاطه تظهر أنه قادر على التوازن بين التعلم والترفيan والترفيه والنشاط البدني بشكل جيد جدًا. إمكانيات كبيرة في عالم التكنولوجيا والانضباط في الدراسة تجعله مبرمجًا واعدًا."
             }
-          },
-          plugins: {
-            legend: { display: false },
-            tooltip: { enabled: true }
-          }
+        };
+
+        let barChart, pieChart, lineChart;
+
+        function createCharts(lang) {
+            const t = translations[lang];
+            // Bar Chart
+            const barCtx = document.getElementById('barChart').getContext('2d');
+            if (barChart) barChart.destroy();
+            barChart = new Chart(barCtx, {
+                type: 'bar',
+                data: {
+                    labels: t.chart_labels_days,
+                    datasets: [{
+                        label: t.table_category, // atau label lain jika perlu
+                        data: [ // data frekuensi
+                            Number(t.freq_olahraga.replace(/[^\d]/g, '')) || 3,
+                            Number(t.freq_game.replace(/[^\d]/g, '')) || 6,
+                            Number(t.freq_belajar.replace(/[^\d]/g, '')) || 5
+                        ],
+                        backgroundColor: ['#4CAF50', '#FF9800', '#2196F3'],
+                        borderRadius: 5,
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            stepSize: 1,
+                            max: 7,
+                            title: {
+                                display: true,
+                                text: t.table_data
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: t.table_category
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { enabled: true }
+                    }
+                }
+            });
+
+            // Pie Chart
+            const pieCtx = document.getElementById('pieChart').getContext('2d');
+            if (pieChart) pieChart.destroy();
+            pieChart = new Chart(pieCtx, {
+                type: 'pie',
+                data: {
+                    labels: ["Futsal","Game","Jogging"],  // bisa juga taruh di translations kalau mau
+                    datasets: [{
+                        data: [40, 35, 25],
+                        backgroundColor: ['#4CAF50', '#FF9800', '#2196F3'],
+                        hoverOffset: 30
+                    }]
+                },
+                options: {
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                // warna teks legend agar kontras
+                                color: lang === 'ar' ? '#000' : '#000'
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Line Chart
+            const lineCtx = document.getElementById('lineChart').getContext('2d');
+            if (lineChart) lineChart.destroy();
+            lineChart = new Chart(lineCtx, {
+                type: 'line',
+                data: {
+                    labels: t.chart_labels_days,
+                    datasets: [{
+                        label: t.chart_data_label || t.table_data, // bisa ditambah di translations jika diinginkan
+                        data: [3,3,3,3,3,1,1],
+                        fill: true,
+                        backgroundColor: 'rgba(33, 150, 243, 0.2)',
+                        borderColor: '#2196F3',
+                        tension: 0.3,
+                        pointBackgroundColor: '#2196F3'
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 5,
+                            stepSize: 1,
+                            title: {
+                                display: true,
+                                text: t.table_data
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: t.table_category
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { enabled: true }
+                    }
+                }
+            });
         }
-      });
-    }
 
-    // Fungsi untuk mengganti teks berdasarkan bahasa
-    function setLanguage(lang) {
-      const t = translations[lang];
-      if (!t) return;
+        // Fungsi untuk mengganti teks berdasarkan bahasa
+        function setLanguage(lang) {
+            const t = translations[lang];
+            if (!t) return;
 
-      // ubah title halaman
-      document.getElementById('title').innerHTML = t.title;
+            // ubah title halaman
+            document.getElementById('title').innerHTML = t.title;
 
-      // ubah nav
-      document.querySelectorAll('nav a').forEach(a => {
-        const key = a.getAttribute('data-key');
-        if (key && t[key]) a.innerText = t[key];
-      });
+            // ubah nav
+            document.querySelectorAll('nav a').forEach(a => {
+                const key = a.getAttribute('data-key');
+                if (key && t[key]) a.innerText = t[key];
+            });
 
-      // section titles
-      const mapping = [
-        {id: 'biodata_title', selector: 'h2[data-key="biodata_title"]'},
-        {id: 'visi_title', selector: 'h2[data-key="visi_title"]'},
-        {id: 'misi_title', selector: 'h2[data-key="misi_title"]'},
-        {id: 'moto_title', selector: 'h2[data-key="moto_title"]'},
-        {id: 'statistik_title', selector: 'h2[data-key="statistik_title"]'},
-        {id: 'chart_bar_title', selector: 'h2[data-key="chart_bar_title"]'},
-        {id: 'chart_pie_title', selector: 'h2[data-key="chart_pie_title"]'},
-        {id: 'chart_line_title', selector: 'h2[data-key="chart_line_title"]'},
-        {id: 'analysis_title', selector: 'h2[data-key="analysis_title"]'}
-      ];
-      mapping.forEach(m => {
-        const el = document.querySelector(m.selector);
-        if (el && t[m.id]) el.innerText = t[m.id];
-      });
+            // section titles
+            const mapping = [
+                {id: 'biodata_title', selector: 'h2[data-key="biodata_title"]'},
+                {id: 'visi_title', selector: 'h2[data-key="visi_title"]'},
+                {id: 'misi_title', selector: 'h2[data-key="misi_title"]'},
+                {id: 'moto_title', selector: 'h2[data-key="moto_title"]'},
+                {id: 'statistik_title', selector: 'h2[data-key="statistik_title"]'},
+                {id: 'chart_bar_title', selector: 'h2[data-key="chart_bar_title"]'},
+                {id: 'chart_pie_title', selector: 'h2[data-key="chart_pie_title"]'},
+                {id: 'chart_line_title', selector: 'h2[data-key="chart_line_title"]'},
+                {id: 'analysis_title', selector: 'h2[data-key="analysis_title"]'}
+            ];
+            mapping.forEach(m => {
+                const el = document.querySelector(m.selector);
+                if (el && t[m.id]) el.innerText = t[m.id];
+            });
 
-      // label / teks lain
-      const labelIds = [
-        'label_name','label_birthday','label_address','label_education','label_contact'
-      ];
-      labelIds.forEach(id => {
-        const el = document.querySelector('[data-key="'+id+'"]');
-        if (el && t[id]) el.innerText = t[id];
-      });
+            // label / teks lain
+            const labelIds = [
+                'label_name','label_birthday','label_address','label_education','label_contact'
+            ];
+            labelIds.forEach(id => {
+                const el = document.querySelector('[data-key="'+id+'"]');
+                if (el && t[id]) el.innerText = t[id];
+            });
 
-      const idMap = [
-        {id: 'name', key: 'title'},  
-        {id: 'birthday', key: 'birthday'},
-        {id: 'address', key: 'address'},
-        {id: 'contact', key: 'contact'},
-        {id: 'freq_olahraga', key: 'freq_olahraga'},
-        {id: 'freq_game', key: 'freq_game'},
-        {id: 'freq_belajar', key: 'freq_belajar'},
-        {id: 'hobi', key: 'hobi'},
-        {id: 'visi_text', key: 'visi_text'},
-        {id: 'moto_text', key: 'moto_text'},
-        {id: 'analysis_1', key: 'analysis_1'},
-        {id: 'analysis_2', key: 'analysis_2'},
-        {id: 'analysis_3', key: 'analysis_3'},
-        {id: 'analysis_4', key: 'analysis_4'}
-      ];
-      idMap.forEach(m => {
-        const el = document.getElementById(m.id);
-        if (el && t[m.key]) {
-          el.innerHTML = t[m.key];
+            const idMap = [
+                {id: 'name', key: 'title'},  
+                {id: 'birthday', key: 'birthday'},
+                {id: 'address', key: 'address'},
+                {id: 'contact', key: 'contact'},
+                {id: 'freq_olahraga', key: 'freq_olahraga'},
+                {id: 'freq_game', key: 'freq_game'},
+                {id: 'freq_belajar', key: 'freq_belajar'},
+                {id: 'hobi', key: 'hobi'},
+                {id: 'visi_text', key: 'visi_text'},
+                {id: 'moto_text', key: 'moto_text'},
+                {id: 'analysis_1', key: 'analysis_1'},
+                {id: 'analysis_2', key: 'analysis_2'},
+                {id: 'analysis_3', key: 'analysis_3'},
+                {id: 'analysis_4', key: 'analysis_4'}
+            ];
+            idMap.forEach(m => {
+                const el = document.getElementById(m.id);
+                if (el && t[m.key]) {
+                    el.innerHTML = t[m.key];
+                }
+            });
+
+            // arah teks (dir)
+            if (lang === 'ar') {
+                document.body.setAttribute('dir', 'rtl');
+            } else {
+                document.body.setAttribute('dir', 'ltr');
+            }
+
+            // recreate / update charts agar label hari & title sesuai bahasa
+            createCharts(lang);
         }
-      });
 
-      // arah teks (dir)
-      if (lang === 'ar') {
-        document.body.setAttribute('dir', 'rtl');
-      } else {
-        document.body.setAttribute('dir', 'ltr');
-      }
+        // Event listener untuk tombol bahasa
+        document.querySelectorAll('.language-buttons button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const lang = btn.getAttribute('data-lang');
+                setLanguage(lang);
+            });
+        });
 
-      // recreate / update charts agar label hari & title sesuai bahasa
-      createCharts(lang);
-    }
-
-    // Event listener untuk tombol bahasa
-    document.querySelectorAll('.language-buttons button').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const lang = btn.getAttribute('data-lang');
-        setLanguage(lang);
-      });
-    });
-
-    // Saat load halaman, set bahasa default dan buat chart
-    window.addEventListener('DOMContentLoaded', () => {
-      setLanguage('id');
-    });
-  </script>
+        // Saat load halaman, set bahasa default dan buat chart
+        window.addEventListener('DOMContentLoaded', () => {
+            setLanguage('id');
+        });
+    </script>
 
 </body>
 </html>
